@@ -10,16 +10,16 @@ function convertToObject(sourceString) {
     return {};
   }
 
-  const stylesObject = {};
+  const stylesMap = {};
   const stylesDeclarations = sourceString.split(';');
 
   stylesDeclarations.forEach((declaration) => {
     const [key, value] = declaration.split(':').map((string) => string.trim());
 
-    stylesObject[key] = value;
+    stylesMap[key] = value;
   });
 
-  return stylesObject;
+  return stylesMap;
 }
 
 module.exports = convertToObject;
